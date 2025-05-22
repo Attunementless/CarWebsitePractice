@@ -1,35 +1,20 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
-import { Footer } from "@/components";
+import { Footer, NavBar } from "@components";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Discover the best cats in the world",
+export const metadata = {
+  title: "Car Hub",
+  description: "Discover the best car in the world.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className="relative"
-      >
-        <Navbar />
+      <body className="relative">
+        <NavBar />
         {children}
         <Footer />
       </body>
